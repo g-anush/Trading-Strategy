@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Strategy Results</title>
+</head>
+<body>
+    <h1>Backtest Results:</h1>
+    <ul>
+        {% for key, value in backtest_results.items() %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Your Price Quote: ${{ quote }}</h2>
+</body>
+</html>

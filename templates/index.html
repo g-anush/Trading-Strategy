@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Strategy Consultation</title>
+</head>
+<body>
+    <h1>Welcome to the Trading Strategy Consultation System!</h1>
+    <form method="POST" action="/">
+        <label for="user_strategy">Describe your trading strategy:</label>
+        <textarea name="user_strategy" required></textarea>
+
+        {% for question in ["What is the time frame for your trading strategy?",
+                             "Which financial instruments are you trading?",
+                             "What is your risk tolerance?"] %}
+            <label for="{{ question }}">{{ question }}</label>
+            <input type="text" name="{{ question.replace(" ", "_") }}" required>
+        {% endfor %}
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
